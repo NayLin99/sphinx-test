@@ -24,3 +24,7 @@ help:
 # whenever a change is detected.
 livehtml:
 	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+clean:
+	@$(SPHINXBUILD) -M clean "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O);
+	cd _build; git worktree add -f html gh-pages
